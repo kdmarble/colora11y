@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const port = server.listen(process.env.PORT || 3000)
 const path = require('path')
 const bodyParser = require('body-parser')
 const blinder = require('color-blind')
@@ -11,6 +10,7 @@ const puppeteer = require('puppeteer')
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.set('port', 3000)
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/app.html'))
@@ -237,5 +237,5 @@ function getDistances(colorPairs){
     return distances
 }
 
-app.listen(port, () => console.log(`App running at http://localhost:${port}`))
+app.listen(process.env.PORT || app.get('port'), () => console.log(`App running at http://localhost:${app.get("port")}`))
 
