@@ -26,7 +26,7 @@ function submitData(){
     }
   }
 
-  fetch('http://localhost:3000/colors', {
+  fetch('https://colora11y.herokuapp.com/colors', {
     method: 'POST', 
     body: new URLSearchParams(color_object),
     headers: new Headers({
@@ -45,7 +45,7 @@ function submitLink() {
     "link": link
   }
 
-  fetch('http://localhost:3000/link', {
+  fetch('https://colora11y.herokuapp.com//link', {
     method: 'POST', 
     body: new URLSearchParams(link_object),
     headers: new Headers({
