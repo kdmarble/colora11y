@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.port
+const port = server.listen(process.env.PORT || 3000)
 const path = require('path')
 const bodyParser = require('body-parser')
 const blinder = require('color-blind')
