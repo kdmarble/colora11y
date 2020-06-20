@@ -1,91 +1,36 @@
+#conflicts > p {
+    display: flex;
+    flex-direction: column;
+}
 
-#entered-c1, #entered-c2, #entered-c3, #entered-c4, #entered-c5 {
-    background-color: #fff;
-    background-image: linear-gradient(45deg, #c6c6cc 25%, transparent 25%, transparent 75%, #c6c6cc 75%), linear-gradient(45deg, #c6c6cc 25%, transparent 25%, transparent 75%, #c6c6cc 75%);
-    background-size: 5px 5px;
-    background-position: 0 0, 50px 50px;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
+#spinner{
+    visibility: hidden;
+    width: 80px;
+    height: 80px;
+  
+    border: 2px solid #f3f3f3;
+    border-top:3px solid #f25a41;
+    border-radius: 100%;
+  
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    margin: auto;
+  
+    animation: spin 1s infinite linear;
   }
-
-#alternative-c1,#alternative-c2, #alternative-c3, #alternative-c4, #alternative-c5 {
-    background-color: #fff;
-    background-image: linear-gradient(45deg, #c6c6cc 25%, transparent 25%, transparent 75%, #c6c6cc 75%), linear-gradient(45deg, #c6c6cc 25%, transparent 25%, transparent 75%, #c6c6cc 75%);
-    background-size: 5px 5px;
-    background-position: 0 0, 50px 50px;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
+  
+  @keyframes spin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
   }
-
-#display-entered-1{
-    background-color: rgb(141, 73, 105) ;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
-
-#display-entered-2 {
-    background-color: rgb(57, 161, 126);
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
-
-#display-entered-3{
-    background-color: rgb(57, 59, 161) ;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
-
-#display-entered-4{
-    background-color: rgb(137, 57, 161) ;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
-
-#display-entered-5{
-    background-color: rgb(142, 161, 57) ;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
-
-
-#new1{
-    background-color: rgb(161, 57, 106) ;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
-
-#new2 {
-    background-color: rgb(161, 57, 106);
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
-
-#new3{
-    background-color: rgb(161, 57, 106) ;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
-
-#new4{
-    background-color: rgb(161, 57, 106) ;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
-
-#new5{
-    background-color: rgb(161, 57, 106) ;
-    margin: 1px ;
-    width: 100px;
-    height: 50px;
-}
+  
+  #spinner.show {
+    visibility: visible;
+  }
+  

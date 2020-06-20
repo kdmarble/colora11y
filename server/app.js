@@ -54,11 +54,13 @@ app.post('/link', async (req, res) => {
     )
 })
 
+// Helper function to convert rgb values to hex values
 const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
     const hex = x.toString(16)
     return hex.length === 1 ? '0' + hex : hex
 }).join('')
 
+// Puppeteer script to capture a screenshot of a webpage
 const getScreenshot = async (link) => {
     const browser = await puppeteer.launch()
     const page = await browser.newPage()

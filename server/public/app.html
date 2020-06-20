@@ -4,54 +4,69 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Colora11y</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='./colora11y.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='colora11y.css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-
-<div class='container'>
-    <div class ='jumbotron'>
-    <h1>Colora11y</h1>
-    <p>Approximately 8 percent of the population are color blind. Our goal is to create a web app that tests if a combination of colors is color-blind friendly or will present conflicting colors. It can be a useful tool for web designers to quickly test a series of colors that they wish to use, it can also be used to test a web page via a url. The web app will then mark conflicting color and suggest alternatives.</p>
-    </div>
-
-    <div class="row border border-danger">
-
-        <div class='col-lg-6 col-sm-6'>
-        <h6>Enter hex colors</h6>
-        <form action ="/url" method = "GET">
-            <input name = "c1" type="text">
-            <br><input name = "c2" type="text">
-            <br><input name = "c3" type="text">
-            <br><input name = "c4" type="text">
-            <br><input name = "c5" type="text">
-            <br><input name = "webpage" type="url" placeholder="url">
-            <br><button type="button" onclick="display_entered_alternative_colors()">submit</button>
-        </form>
-        </div>
+    <nav class="navbar navbar-light ">
+        <span class="navbar-brand mb-0"><h1>Colora11y</h1></span>
+        <span>Team: Colora11y Authors: L. Hon, Y. Liu, K. Marble</span>
+    </nav>
     
-        <div class='col-lg-3 col-sm-6'>
-        <h6>entered</h6>
-            <div id = "entered-c1"></div>
-            <div id = "entered-c2"></div>
-            <div id = "entered-c3"></div>
-            <div id = "entered-c4"></div>
-            <div id = "entered-c5"></div>
+    <div class='container'>
+        <div class ='jumbotron'>
+        <h2>Purpose:</h2>
+        <p>Approximately 8 percent of the population are color blind. Our goal is to create a web app that tests if a combination of colors is color-blind friendly or if they will present conflicting colors. You can enter your color palette via hex color codes to receive possible conflicting colors. You can also enter the link to any website, and our app will retrieve the 10 most common colors that appear on that website, and return any possible conflicting colors. </p>
         </div>
 
-        <div class='col-lg-3 col-sm-6'>
-        <h6>alternatives</h6>
-            <div id = "alternative-c1"></div>
-            <div id = "alternative-c2"></div>
-            <div id = "alternative-c3"></div>
-            <div id = "alternative-c4"></div>
-            <div id = "alternative-c5"></div>
-        </div>
+        <div class="container row">
 
+            <div class='col-lg-6 col-sm-6'>
+            <h3>Enter Hex Colors</h3>
+            <form id="colorForm">
+                <div class="form-group">
+                    <div id="inputs">
+                        <input class="form-control" name="c1" type="color" onchange="updateFormValues(event)">
+                        <input class="form-control" type="text" name="c1" id="c1_text" onchange="updateFormValues(event)">
+                        <br>
+                        <input class="form-control" name="c2" type="color" onchange="updateFormValues(event)">
+                        <input class="form-control" type="text" name="c2" id="c2_text" onchange="updateFormValues(event)">
+                        <br>
+                        <input class="form-control" name="c3" type="color" onchange="updateFormValues(event)">
+                        <input class="form-control" type="text" name="c3" id="c3_text" onchange="updateFormValues(event)">
+                        <br>
+                        <input class="form-control" name="c4" type="color" onchange="updateFormValues(event)">
+                        <input class="form-control" type="text" name="c4" id="c4_text" onchange="updateFormValues(event)">
+                        <br>
+                        <input class="form-control" name="c5" type="color" onchange="updateFormValues(event)">
+                        <input class="form-control" type="text" name="c5" id="c5_text" onchange="updateFormValues(event)">
+                    </div>
+                    <br>
+                    <button class="btn btn-outline-dark btn-lg" type="button" onclick="submitData()">Submit</button>
+                    <button class="btn btn-outline-dark btn-lg" type="button" onclick="clear_input(event)">Clear</button>
+                    <button class="btn btn-outline-dark btn-lg" type="button" onclick="addColor('inputs')">Add Color</button>
+                    <button class="btn btn-outline-dark btn-lg" type="button" onclick="removeColor('inputs')">Remove Color</button>
+                </div>
+            </form>
+
+            <br>
+            <h3>Enter Website Link</h3>
+            <form id="linkForm">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="link" id="link">
+                    <br>
+                    <button class="btn btn-outline-dark btn-lg" type="button" onclick="submitLink()">Submit</button>
+                    <button class="btn btn-outline-dark btn-lg" type="button" onclick="clear_input(event)">Clear</button>
+                </div>
+            </form>
+            </div>
+        
+            <div class='col-lg-6 col-sm-6' id="conflicts">
+                <div id="spinner"></div>
+            </div>
+        </div>
     </div>
 
-</div>
-
-<script src="./colora11y.js"></script>
+<script src="colora11y.js"></script>
 </body>
-</html>
+</html> 
