@@ -1,3 +1,18 @@
+h1 {
+    font-family: fantasy;
+    font-size: 3em;
+    border-bottom: 2px solid pink;
+    border-right: 2px solid pink;
+/*    width: 400px;*/
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 4px 4px 5px #888888;
+    margin-top: 10px;
+}
+body {
+    background-color: blue;
+}
 
 #entered-c1, #entered-c2, #entered-c3, #entered-c4, #entered-c5 {
     background-color: #fff;
@@ -88,4 +103,22 @@
     margin: 1px ;
     width: 100px;
     height: 50px;
+}
+
+#red_ {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+#blue_ {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+#bottom_ {
+    color: blue;
+    position:absolute;
+    bottom:0;
+    margin-left: auto;
+    margin-right: auto;
 }

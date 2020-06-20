@@ -4,34 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Colora11y</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='./colora11y.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='colora11y.css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-
+    <pre><h1>Color  Conversion</h1> <br></pre>
 <div class='container'>
     <div class ='jumbotron'>
-    <h1>Colora11y</h1>
+    <h3>Purpose:</h3>
     <p>Approximately 8 percent of the population are color blind. Our goal is to create a web app that tests if a combination of colors is color-blind friendly or will present conflicting colors. It can be a useful tool for web designers to quickly test a series of colors that they wish to use, it can also be used to test a web page via a url. The web app will then mark conflicting color and suggest alternatives.</p>
     </div>
 
     <div class="row border border-danger">
 
         <div class='col-lg-6 col-sm-6'>
-        <h6>Enter hex colors</h6>
-        <form action ="/url" method = "GET">
+        <h6>Enter Hex Colors</h6>
+        <form id = "form" action ="/url" method = "GET">
             <input name = "c1" type="text">
             <br><input name = "c2" type="text">
             <br><input name = "c3" type="text">
             <br><input name = "c4" type="text">
             <br><input name = "c5" type="text">
             <br><input name = "webpage" type="url" placeholder="url">
-            <br><button type="button" onclick="display_entered_alternative_colors()">submit</button>
+            <br><br><button type="button" onclick="display_entered_alternative_colors()">submit</button>
+            &nbsp;
+            <button type="button" onclick="clear_input()">clear</button>
         </form>
         </div>
+
     
         <div class='col-lg-3 col-sm-6'>
-        <h6>entered</h6>
+        <h6>Original</h6>
             <div id = "entered-c1"></div>
             <div id = "entered-c2"></div>
             <div id = "entered-c3"></div>
@@ -40,7 +43,7 @@
         </div>
 
         <div class='col-lg-3 col-sm-6'>
-        <h6>alternatives</h6>
+        <h6>Alternatives</h6>
             <div id = "alternative-c1"></div>
             <div id = "alternative-c2"></div>
             <div id = "alternative-c3"></div>
@@ -49,9 +52,14 @@
         </div>
 
     </div>
+    <div id = "bottom_">
+        <pre><h6><em>Team: Colora11y         Authors: L. Hon, Y. Liu, K. Marble</em></h6></pre>
+    </div>
+
+
 
 </div>
 
-<script src="./colora11y.js"></script>
+<script src="colora11y.js"></script>
 </body>
-</html>
+</html> 

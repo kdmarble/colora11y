@@ -29,3 +29,8 @@ function display_entered_alternative_colors(){
    a5=document.getElementById("alternative-c5");
    a5.id="new5";
 }
+
+function clear_input() {
+  var form = document.getElementById("form")
+  form.reset()
+}
