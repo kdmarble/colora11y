@@ -45,7 +45,7 @@ function submitLink() {
     "link": link
   }
 
-  fetch('https://colora11y.herokuapp.com//link', {
+  fetch('https://colora11y.herokuapp.com/link', {
     method: 'POST', 
     body: new URLSearchParams(link_object),
     headers: new Headers({
