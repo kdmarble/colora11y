@@ -256,7 +256,7 @@ function addColor(divName) {
   hexField.type = "text"
   hexField.name = `c${colors.length + 1}`
   hexField.id = `c${colors.length + 1}_text`
-  hexField.onChange = "updateFormValues(event"
+  hexField.onChange = "updateFormValues(event)"
 
   colorForm.appendChild(br)
   colorForm.appendChild(colorPicker)
