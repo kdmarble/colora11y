@@ -4,6 +4,7 @@
 }
 
 #spinner{
+    z-index: 1000;
     visibility: hidden;
     width: 80px;
     height: 80px;
