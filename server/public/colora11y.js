@@ -250,13 +250,14 @@ function addColor(divName) {
   colorPicker.classList.add("form-control")
   colorPicker.name = `c${colors.length + 1}`
   colorPicker.type = "color"
-  colorPicker.onchange = "updateFormValues(event)"
+  colorPicker.onchange = updateFormValues
 
   hexField.classList.add("form-control")
   hexField.type = "text"
   hexField.name = `c${colors.length + 1}`
   hexField.id = `c${colors.length + 1}_text`
-  hexField.onChange = "updateFormValues(event)"
+  hexField.onChange = updateFormValues
+  hexField.placeholder = "#ff00ff"
 
   colorForm.appendChild(br)
   colorForm.appendChild(colorPicker)
