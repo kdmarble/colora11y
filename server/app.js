@@ -63,7 +63,7 @@ const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
 // Puppeteer script to capture a screenshot of a webpage
 const getScreenshot = async (link) => {
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
     const page = await browser.newPage()
